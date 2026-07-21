@@ -57,12 +57,12 @@ cat_features = [
     "smoking_alcohol",
     "gender",
 ]
-# model.fit(train_x , train_y , cat_features=cat_features)
-# pred = model.predict(test_x)
+model.fit(train_x , train_y , cat_features=cat_features)
+pred = model.predict(test_x)
 
 
-# print(classification_report(test_y,pred))
-# print(balanced_accuracy_score(test_y,pred))
+print(classification_report(test_y,pred))
+print(balanced_accuracy_score(test_y,pred))
 
 
 importance = pd.DataFrame({
@@ -75,50 +75,11 @@ importance = importance.sort_values(
     ascending=False
 )
 
-# print(importance)
+print(importance)
 
 # import joblib
 # joblib.dump(model, "cat_model2.pkl")
 
-#             precision    recall  f1-score   support
-
-#      at-risk       0.98      0.94      0.96    177769
-#          fit       0.62      0.93      0.74     11941
-#    unhealthy       0.79      0.89      0.84     17317
-
-#     accuracy                           0.93    207027
-#    macro avg       0.80      0.92      0.85    207027
-# weighted avg       0.95      0.93      0.94    207027
-
-# cat3
-#        precision    recall  f1-score   support
-
-#      at-risk       0.99      0.93      0.96    177769
-#          fit       0.64      0.93      0.76     11941
-#    unhealthy       0.72      0.90      0.80     17317
-
-#     accuracy                           0.93    207027
-#    macro avg       0.78      0.92      0.84    207027
-# weighted avg       0.94      0.93      0.93    207027
-
-# 0.9212741690745291
-#      feature  importance
-# 8              stress_level   25.791508
-# 0            sleep_duration   16.206043
-# 2                       bmi   11.187167
-# 10  physical_activity_level    7.485334
-# 4                step_count    6.025788
-# 5         exercise_duration    5.905355
-# 11          smoking_alcohol    5.773962
-# 6              water_intake    5.267686
-# 1                heart_rate    4.790548
-# 3       calorie_expenditure    4.381021
-# 9             sleep_quality    2.543589
-# 12                   gender    1.803627
-# 13             bmi_category    1.474462
-# 7                 diet_type    1.363909
-
-# cat4
 #     precision    recall  f1-score   support
 
 #      at-risk       0.99      0.94      0.96    177769
